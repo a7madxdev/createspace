@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import Image from "next/image";
+import { Bell, Home } from "lucide-react";
+import Link from "next/link";
+import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
+import { SidebarProvider } from "@/contexts/SidebarContext";
 
 const rubik = localFont({
   src: [
@@ -19,8 +25,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${rubik.variable} antialiased`}>
-      <body className="h-dvh w-dvw font-rubik">
-        <div className="">{children}</div>
+      <body className="h-dvh w-dvw font-rubik text-slate-900">
+        <SidebarProvider>
+          <div className="size-full grid grid-cols-1 md:grid-cols-[250px_1fr] grid-rows-[52px_1fr] overflow-hidden">
+            <Sidebar />
+            <Header />
+            <main className="size-full overflow-auto p-3">{children}</main>
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );
