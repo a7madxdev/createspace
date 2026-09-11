@@ -26,13 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${rubik.variable} antialiased`}>
       <body className="h-dvh w-dvw font-rubik text-slate-900">
-        <SidebarProvider>
-          <div className="size-full grid grid-cols-1 md:grid-cols-[250px_1fr] grid-rows-[52px_1fr] overflow-hidden">
-            <Sidebar />
-            <Header />
-            <main className="size-full overflow-auto p-3">{children}</main>
-          </div>
-        </SidebarProvider>
+        <SidebarProvider>{children}</SidebarProvider>
       </body>
     </html>
   );

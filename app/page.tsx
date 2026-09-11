@@ -1,3 +1,7 @@
-export default function Home() {
-  return <div className="">Base layout done</div>;
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+
+export default async function Home() {
+  const session = await auth();
+  redirect(session ? "/workspaces" : "/signin");
 }
