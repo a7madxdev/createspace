@@ -3,3 +3,8 @@
 @theme {
   --font-rubik: var(--font-rubik);
 }
+
+button,
+a {
+  @apply cursor-pointer;
+}
