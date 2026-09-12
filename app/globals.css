@@ -8,3 +8,10 @@ button,
 a {
   @apply cursor-pointer;
 }
+
+input,
+textarea,
+button,
+a {
+  @apply outline-0;
+}

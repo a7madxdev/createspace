@@ -1,7 +1,6 @@
 "use client";
 
 import { useSidebar } from "@/contexts/SidebarContext";
-import { AnimatePresence, motion } from "framer-motion";
 import { Home, X } from "lucide-react";
 import Link from "next/link";
 
@@ -9,7 +8,7 @@ function Sidebar() {
   const { isOpen, closeSidebar } = useSidebar();
   return (
     <aside
-      className={`row-span-2 bg-blue-500 fixed h-full w-62.5 duration-150 md:static ${isOpen ? "left-0" : "-left-62.5"}`}
+      className={`row-span-2 bg-blue-500 fixed h-full w-62.5 duration-150 z-10 md:static ${isOpen ? "left-0" : "-left-62.5"}`}
     >
       <div className="h-13 flex items-center justify-between px-3">
         <h1 className="text-xl text-white font-bold">CreateSpace</h1>
